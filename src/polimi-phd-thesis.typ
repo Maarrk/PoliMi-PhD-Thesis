@@ -21,12 +21,6 @@
   /// Cosupervisor(s) of the thesis.
   /// -> str | array
   cosupervisor: none,
-  /// Deprecated: use `supervisor`.
-  /// -> str | array
-  advisor: none,
-  /// Deprecated use `cosupervisor`.
-  /// -> str | array
-  coadvisor: none,
   /// Academic year of the thesis.
   /// -> auto | str
   academic-year: auto,
@@ -56,13 +50,6 @@
   let colored-headings = false
   if frontispiece in ("deib-phd", "classical-master", "cs-eng-master") {
     colored-headings = true
-  }
-  // retrocompatibility
-  if (supervisor == none and advisor != none) {
-    supervisor = advisor
-  }
-  if (cosupervisor == none and coadvisor != none) {
-    cosupervisor = coadvisor
   }
   _document-type.update(frontispiece)
 
@@ -343,12 +330,6 @@
   /// Cosupervisor(s) of the thesis.
   /// -> str | array
   cosupervisor: none,
-  /// Deprecated: use `supervisor`.
-  /// -> str | array
-  advisor: none,
-  /// Deprecated: use `cosupervisor`.
-  /// -> str | array
-  coadvisor: none,
   /// Academic year of the thesis.
   /// -> auto | str
   academic-year: auto,
@@ -377,13 +358,6 @@
     set document(
       keywords: keywords,
     )
-  }
-  // retrocompatibility
-  if (supervisor == none and advisor != none) {
-    supervisor = advisor
-  }
-  if (cosupervisor == none and coadvisor != none) {
-    cosupervisor = coadvisor
   }
   _document-type.update("article-format")
 
@@ -531,12 +505,6 @@
   /// Cosupervisor(s) of the thesis.
   /// -> str | array
   cosupervisor: none,
-  /// Deprecated: use `supervisor`.
-  /// -> str | array
-  advisor: none,
-  /// Deprecated: use `cosupervisor`.
-  /// -> str | array
-  coadvisor: none,
   /// Academic year of the thesis.
   /// -> auto | str
   academic-year: auto,
@@ -552,13 +520,6 @@
     title: title,
     author: author,
   )
-  // retrocompatibility
-  if (supervisor == none and advisor != none) {
-    supervisor = advisor
-  }
-  if (cosupervisor == none and coadvisor != none) {
-    cosupervisor = coadvisor
-  }
   _document-type.update("executive-summary")
 
   set text(

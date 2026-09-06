@@ -41,11 +41,11 @@
 
 /// The current state (title page, \*matter...)
 /// -> state
-#let _document-state = state("init", "TITLE_PAGE")
+#let _document-state = state("document-state", "TITLE_PAGE")
 
 /// The current type of document.
 /// -> state
-#let _document-type = state("init", "phd")
+#let _document-type = state("document-type", "phd")
 
 /// Localization dictionary. It could be deprecated since theses are written exclusively in English.
 /// -> dict

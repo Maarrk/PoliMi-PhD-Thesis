@@ -1,5 +1,9 @@
 # Changelog
 
+# 0.3.0 - TBA
+
+- Removed (co)advisor arguments from all theses (**breaking change**)
+
 ## 0.2.1 - 2026-06-27
 
 - Added presentation template
@@ -15,7 +19,7 @@
 - Added examples, thumbnails
 - Added DEIB logo
 - Removed localization (now only ENG)
-- Removed `phdcycle`
+- Removed `phdcycle` argument
 - Reorganized docs
 - Fixed figure numbering
 
