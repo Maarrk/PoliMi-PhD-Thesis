@@ -52,6 +52,15 @@
   /// Touying overrides for this slide.
   /// -> dictionary
   config: (:),
+  /// Title font size
+  /// -> length
+  title-size: 120pt,
+  /// Title block width, might need adjustment for long titles
+  /// -> length
+  title-width: 42cm,
+  /// Subtitle and date font size
+  /// -> length
+  subtitle-size: 18pt,
 ) = touying-slide-wrapper(self => {
   let title-style = (
     "default": (
@@ -167,17 +176,26 @@
     show: pad.with(top: title-style.at(style).at("height", default: 15.47cm))
     let info = self.info
     block(
-      width: 42cm,
+      width: title-width,
       {
         text(
-          size: 120pt,
+          size: title-size,
           weight: "extrabold",
           ..title-style.at(style).at("text", default: none),
           info.title,
         )
+        if (info.subtitle != none) {
+          v(title-style.at(style).at("height-subtitle", default: 1fr))
+          text(
+            size: subtitle-size,
+            weight: "semibold",
+            ..title-style.at(style).at("text", default: none),
+            info.subtitle,
+          )
+        }
         v(title-style.at(style).at("height-subtitle", default: 1fr))
         text(
-          size: 18pt,
+          size: subtitle-size,
           weight: "light", // extralight
           ..title-style.at(style).at("text", default: none),
           {
