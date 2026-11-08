@@ -30,7 +30,7 @@
   v(4.4cm)
 
   text(
-    size: _sizes.at("12pt").huge,
+    size: _sizes.at("12pt").Large,
     weight: 700,
     fill: if (colored-headings) { bluepoli } else { black },
     title,
@@ -39,7 +39,7 @@
   v(0.35cm)
 
   align(end, context {
-    set text(size: _sizes.at("12pt").Large)
+    set text(size: _sizes.at("12pt").large)
     _localization.at(text.lang).dissertation + ":\n" + text(weight: "bold", author)
   })
 
