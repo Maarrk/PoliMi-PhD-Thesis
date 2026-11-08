@@ -269,7 +269,7 @@
   }
 
   show outline.entry: it => context {
-    v(1em)
+    // v(1em)
     if (
       it.element.func() == figure and it.element.at("kind") == "_blank-toc"
     ) {
