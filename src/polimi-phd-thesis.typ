@@ -728,7 +728,7 @@
 #let toc = {
   [#metadata(none) <__toc-start>]
   outline(
-    title: context _localization.at(text.lang).toc,
+    title: "Table of Contents",
     indent: 1.2em,
     target: target,
   )
@@ -770,7 +770,7 @@
   }
   [#metadata(none) <__toc-start>]
   outline(
-    title: context _localization.at(text.lang).list-of-figures,
+    title: "List of Figures",
     indent: 1.2em,
     target: figure.where(kind: image),
   )
@@ -785,7 +785,7 @@
   }
   [#metadata(none) <__toc-start>]
   outline(
-    title: context _localization.at(text.lang).list-of-tables,
+    title: "List of Tables",
     indent: 1.2em,
     target: figure.where(kind: table),
   )
