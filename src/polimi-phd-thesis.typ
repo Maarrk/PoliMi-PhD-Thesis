@@ -101,18 +101,16 @@
         let h1-current-page = (
           query(heading.where(level: 1)).filter(h1 => h1.location().page() == here().page()).len() != 0
         )
-        let last-h1 = query(selector(heading.where(level: 1)).before(here())).last().body
+        let last-h1 = query(selector(heading.where(level: 1)).before(here())).last()
+        // Get the prefix used in query, because here we don't know what counter is used for the header
+        let entry-h1 = query(selector(outline.entry.where(element: last-h1))).first() // should be single item in array
 
         let chapter-info = if not (h1-current-page) {
           set text(weight: "bold")
           if (heading.numbering != none) {
-            let heading-num = counter(heading.where(level: 1)).display(header-numbering)
-            text(
-              fill: if (colored-headings) { bluepoli } else { black },
-              heading-num,
-            )
+            entry-h1.prefix().text.slice(0, -1) + "| " // Same separator as header-numbering function
           }
-          last-h1
+          last-h1.body
         }
 
         if (calc.even(here().page())) {
