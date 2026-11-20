@@ -198,7 +198,6 @@
     v(4cm)
     set text(weight: "bold", fill: if (colored-headings) { bluepoli } else { black })
 
-    let heading-num = counter(selector(heading)).display(chapter-numbering)
     if (
       it.numbering != none and (_document-state.get() == "MAINMATTER" or _document-state.get() == "APPENDIX")
     ) {
@@ -206,8 +205,8 @@
         size: 50pt,
         weight: "regular",
         text(
-          // weight: "bold",
-          heading-num,
+          weight: "bold",
+          counter(heading).display().slice(0, -1) + h(1.5mm) + "|" + h(7.5mm),
         ),
       )
     }
@@ -233,13 +232,13 @@
       text(
         size: _sizes.at("12pt").Large,
         fill: section-fill,
-        if it.numbering != none { counter(heading).display(tab-numbering) } + it.body,
+        if it.numbering != none { counter(heading).display() + h(0.7em) } + it.body,
       )
     } else if (it.level >= 3) {
       text(
         size: _sizes.at("12pt").large,
         fill: section-fill,
-        if it.numbering != none { counter(heading).display(tab-numbering) } + it.body,
+        if it.numbering != none { counter(heading).display() + h(0.7em) } + it.body,
       )
     }
     parbreak()
