@@ -229,19 +229,19 @@
     if (it.level == 1) {
       it
     } else if (it.level == 2) {
-      text(
+      block(sticky: true, text(
         size: _sizes.at("12pt").Large,
         fill: section-fill,
         if it.numbering != none { counter(heading).display() + h(0.7em) } + it.body,
-      )
+      ))
     } else if (it.level >= 3) {
-      text(
+      block(sticky: true, text(
         size: _sizes.at("12pt").large,
         fill: section-fill,
         if it.numbering != none { counter(heading).display() + h(0.7em) } + it.body,
-      )
+      ))
     }
-    parbreak()
+    // parbreak()
     // v(0.5em)
   }
 
